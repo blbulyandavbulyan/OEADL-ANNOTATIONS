@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * <br>
  * This annotation is for fields, that you need to display or display and possibly edit in the windows
  * @author David Blbulyan
- * @version 1.0.0
+ * @version 1.0.1
  * @since 1.0.0
  * */
 @Retention(RetentionPolicy.RUNTIME)
@@ -26,9 +26,10 @@ public @interface OEADLField {
      * <br>
      * Этот параметр нужен, если вы хотите чтобы данное поле было доступно для редактирования
      * */
-    boolean editable() default true;//данный параметр отвечает, доступно ли это поле для редактирования
+    boolean editable() default true;
     /**
      * Этот параметр должен содержать ключ, для получения локализованного имени поля.
+     * Если оставить его по умолчанию, то будет использоваться полное имя поля (полное имя класса + . + имя поля в классе) в качестве ключа
      * <br>
      * This parameter must contain the property key, which uses for getting localized field name in localizedFieldGetter
      * */
